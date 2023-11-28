@@ -72,11 +72,27 @@ let cell2 = "";
 let cell3 = "";
 let cell4 = "";
 
-
+let row = 1;
 let counter = 1;
 for(let i = 0; i <string.length; i++ ){
+    if(string[i] === ','){
+        counter += 1;
+    }
+    if(string[i] === '\n'){
+        console.log("Row: ", row);
+        row += 1;
+        console.log(cell1,cell2,cell3,cell4);
+        cell1 ='';
+        cell2 ='';
+        cell3 ='';
+        cell4 ='';
+        counter = 1;
+        continue;
+    }
+
     if(counter === 1){
         cell1 = cell1 + string[i];
+        // console.log(cell1);
         //add in cell 1
     }
     if(counter === 2){
@@ -90,9 +106,6 @@ for(let i = 0; i <string.length; i++ ){
     if(counter === 4){
         cell4 = cell4 + string[i];
         //add in cell 3
-    }
-    if(string[i] === '\n'){
-        counter += 1;
     }
     
 }
