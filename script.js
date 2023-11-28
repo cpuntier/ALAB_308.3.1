@@ -50,4 +50,50 @@ while (true) {
     }
 }
 
-///
+///Part 3
+
+// Your task is to write a script that accomplishes the following:
+// Loop through the characters of a given CSV string.
+// Store each “cell” of data in a variable.
+// When you encounter a comma, move to the next cell.
+// When you encounter the “\r\n” sequence, move to the next “row.”
+// Log each row of data.
+// You do not need to format the data, the following works well.
+// console.log(cell1, cell2, cell3, cell4);
+// You can make the following assumptions:
+// There will only be 4 cells per row.
+// There will be no escaped characters other than “\n”.
+
+
+const string = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`
+
+let cell1 = "";
+let cell2 = "";
+let cell3 = "";
+let cell4 = "";
+
+
+let counter = 1;
+for(let i = 0; i <string.length; i++ ){
+    if(counter === 1){
+        cell1 = cell1 + string[i];
+        //add in cell 1
+    }
+    if(counter === 2){
+        cell2 = cell2 + string[i];
+        //add in cell 2
+    }
+    if(counter === 3){
+        cell3 = cell3 + string[i];
+        //add in cell 3
+    }
+    if(counter === 4){
+        cell4 = cell4 + string[i];
+        //add in cell 3
+    }
+    if(string[i] === '\n'){
+        counter += 1;
+    }
+    
+}
+console.log(cell1,cell2,cell3,cell4);
